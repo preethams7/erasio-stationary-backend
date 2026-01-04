@@ -39,8 +39,8 @@ public class RegistrationController {
 	@Autowired 
 	NotificationsAction notif;
 	
-	@Autowired
-	private EmailService emailService;
+//	@Autowired
+//	private EmailService emailService;
 
 	
 	@RequestMapping(value = "/api/register", method = RequestMethod.POST)

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Category {
@@ -11,24 +12,22 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String category;
-
+	private String descr;
+	@Lob
+	private byte[] image;
 	private boolean enabled;
 
 	public Category() {
 		super();
 	}
 
-	
-
-	public Category(int id, String category,  boolean enabled) {
+	public Category(int id, String category, boolean enabled) {
 		super();
 		this.id = id;
 		this.category = category;
-	
+
 		this.enabled = enabled;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -54,18 +53,22 @@ public class Category {
 		this.enabled = enabled;
 	}
 
-
-
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", category=" + category + ", enabled=" + enabled + "]";
+	public String getDescr() {
+		return descr;
 	}
 
+	public void setDescr(String descr) {
+		this.descr = descr;
+	}
 
+	public byte[] getImage() {
+		return image;
+	}
 
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
 
 	
 
-
-	
 }

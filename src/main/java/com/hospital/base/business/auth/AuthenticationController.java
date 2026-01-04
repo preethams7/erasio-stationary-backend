@@ -29,8 +29,8 @@ public class AuthenticationController {
 
 	private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
 
-	@Autowired
-	private EmailService emailService;
+//	@Autowired
+//	private EmailService emailService;
 
 	@Autowired
 	AccountsService accService;
@@ -67,7 +67,7 @@ public class AuthenticationController {
 			mail.setSubject("Evique-Digital: Password Reset Request");
 			mail.setText("To reset your password, click the link below:\n" + appUrl + "/validatePasswordReset?token="
 					+ optional.getTempAuthCode());
-			emailService.sendEmail(mail);
+//			emailService.sendEmail(mail);
 
 			return new ResponseEntity<AccountsEntity>(optional, new HttpHeaders(), HttpStatus.OK);
 		}

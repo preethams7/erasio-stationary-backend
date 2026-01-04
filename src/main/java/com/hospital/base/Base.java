@@ -2,10 +2,11 @@ package com.hospital.base;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import com.hospital.base.restaurant.food.FoodService;
 
-
+@EnableAsync
 @SpringBootApplication
 public class Base 
 {
